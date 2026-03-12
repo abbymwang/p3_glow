@@ -1,9 +1,10 @@
-// Auto-generated Arduino RGB 8x8 LED Matrix Pixel Art
-// Fruits & Vegetables Slideshow
-// Compatible with FastLED 8x8 RGB matrix (64 LEDs)
+// Author: Abby Wang
+// Date: March 10, 2026
+// Description: Connecting website with Arduino 8x8 LED matrix to display fruit and vegetable pixel art. Coded with the help of Claude.
 
 #include <FastLED.h>
 
+// Credit for FastLED.h Matrix settings: Ramiro Contreras' LED Matrix Website (https://edstem.org/us/courses/94370/discussion/7760657)
 // ----------------- MATRIX SETTINGS (from LEDMATRIX.ino) -----------------
 #define DATA_PIN     6
 #define LED_TYPE     WS2812B
@@ -44,6 +45,7 @@ int XY(uint8_t x, uint8_t y) {
   return ry * W + (W - 1 - rx);
 }
 
+// Generated from .csv file to matrix 0xRRGGBB data. 
 // Sprite pixel data: [sprite][row][col] = 0xRRGGBB
 const uint32_t sprites[45][8][8] PROGMEM = {
   // Blackberry
@@ -565,6 +567,7 @@ int spriteIndexByName(const char* name) {
   return -1;
 }
 
+// I derived and selected a subset of seasonal fruits from each month using the Bay Area fruits and vegetables seasonal guide.
 // ── Monthly seasonal data ─────────────────────────────────────────────────────
 const char* JAN[] = {
   "Orange","Lime","Grapefruit","Lemon",
